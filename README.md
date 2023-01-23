@@ -2,7 +2,7 @@
 Carbon Conscious Calculator: An IUCEE Sustainablility And Leadership course project. 
 
 ***
-This application displays the Embodied Carbon and Embodied Energy valus of building materials.
+This application displays the Embodied Carbon and Embodied Energy values of building materials.
 
 ## Features:
 - Quick display of values.
