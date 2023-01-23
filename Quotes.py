@@ -1,4 +1,4 @@
-
+# List of relative quotes to display on application.
 LIST = [
     '"We are living on this planet as if we had another one to go to." - Terri Swearingen',
     '"One planet, one experiment." - Edward O. Wilson',

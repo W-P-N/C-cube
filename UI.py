@@ -8,8 +8,12 @@ import tkinter.font as font
 
 
 class UI2:
+    """All the functions of UI of the application."""
     def __init__(self):
+        
         self.var = 0
+        
+        # Application theme setup.
         root = theme.ThemedTk()
         root.get_themes()
         root.set_theme("vista")
@@ -45,6 +49,7 @@ class UI2:
         self.embodied_energy_label.grid(row=5, column=1)
 
         # Functions
+        ## Material values - drop down list contains the type of the material.
         def material_to_type(e):
             if self.select_material.get() == "Brick":
                 self.select_type.config(values=brick_list)
@@ -66,6 +71,7 @@ class UI2:
                 self.select_type.config(values=timber_list)
                 self.select_type.current(0)
 
+        ## Energy values - dropdown list containing sub-type of the material.
         def type_to_energy():
             root.after(2000, quote_timer)
             if self.select_material.get() == "Brick":
@@ -112,7 +118,6 @@ class UI2:
                                                           font=("Georgia", 15, "bold"), width=50)
 
         # Button
-        # self.button_image = PhotoImage(file="Button.png")
         self.button_font = font.Font(family="Times New Roman", size=16, weight="bold")
         self.get_energy_button = Button(root, text="Get Energy Values", command=type_to_energy, font=self.button_font, compound=LEFT, )
         self.get_energy_button.grid(row=3, column=1)
@@ -121,7 +126,7 @@ class UI2:
         self.select_material.current(0)
         self.select_material.grid(column=1, row=1)
         self.select_material.bind("<<ComboboxSelected>>", material_to_type)
-        # DropDown type list
+        # DropDown sub-type list
         self.select_type = tnt.Combobox(root, values=[" "], width=50)
         self.select_type.grid(column=1, row=2)
         # Canvas set up
@@ -140,4 +145,4 @@ class UI2:
                                                   font=("The Golden Leaves", 30, "bold"),
                                                   fill="lightgreen", anchor="nw", )
 
-        root.mainloop()
+        root.mainloop()  # Keep going in loop until user closes the window.
